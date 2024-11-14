@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -26,6 +29,8 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jOptionPane = new javax.swing.JOptionPane();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         hasilLabel = new javax.swing.JLabel();
@@ -35,6 +40,17 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
         hapusButton = new javax.swing.JButton();
         keluarButton = new javax.swing.JButton();
 
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 286, Short.MAX_VALUE)
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 116, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Angka 1");
@@ -43,11 +59,21 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
 
         hasilLabel.setText("Hasil");
 
-        angka1Field.setText("jTextField1");
+        angka1Field.setText("Masukkan Angka Pertama");
+        angka1Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                angka1FieldActionPerformed(evt);
+            }
+        });
 
-        angka2Field.setText("jTextField1");
+        angka2Field.setText("Masukkan Angka Kedua");
 
         tambahButton.setText("Tambah");
+        tambahButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tambahButtonActionPerformed(evt);
+            }
+        });
 
         hapusButton.setText("Hapus");
         hapusButton.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +83,11 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
         });
 
         keluarButton.setText("Keluar");
+        keluarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                keluarButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,7 +101,7 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(hapusButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(keluarButton, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))
+                        .addComponent(keluarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -81,7 +112,7 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(angka1Field)))
-                .addGap(154, 154, 154))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,15 +132,40 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
                     .addComponent(tambahButton)
                     .addComponent(hapusButton)
                     .addComponent(keluarButton))
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void hapusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusButtonActionPerformed
+angka1Field.setText("");
+angka2Field.setText("");
+hasilLabel.setText("Hasil: ");
+angka1Field.requestFocus();
         // TODO add your handling code here:
     }//GEN-LAST:event_hapusButtonActionPerformed
+
+    private void tambahButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahButtonActionPerformed
+try {
+    int angka1 = Integer.parseInt(angka1Field.getText());
+    int angka2 = Integer.parseInt(angka2Field.getText());
+    int hasil = angka1 + angka2;
+    hasilLabel.setText("Hasil: " + hasil);
+} catch (NumberFormatException ex) {
+    JOptionPane.showMessageDialog(this, "Masukkan angka valid!");
+}
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tambahButtonActionPerformed
+
+    private void keluarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keluarButtonActionPerformed
+System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_keluarButtonActionPerformed
+
+    private void angka1FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_angka1FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_angka1FieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,6 +209,8 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
     private javax.swing.JLabel hasilLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JOptionPane jOptionPane;
     private javax.swing.JButton keluarButton;
     private javax.swing.JButton tambahButton;
     // End of variables declaration//GEN-END:variables

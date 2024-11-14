@@ -59,7 +59,6 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
 
         hasilLabel.setText("Hasil");
 
-        angka1Field.setText("Masukkan Angka Pertama");
         angka1Field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 angka1FieldActionPerformed(evt);
@@ -71,7 +70,6 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
             }
         });
 
-        angka2Field.setText("Masukkan Angka Kedua");
         angka2Field.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 angka2FieldKeyTyped(evt);

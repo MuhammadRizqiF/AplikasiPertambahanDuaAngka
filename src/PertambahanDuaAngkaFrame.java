@@ -65,8 +65,18 @@ public class PertambahanDuaAngkaFrame extends javax.swing.JFrame {
                 angka1FieldActionPerformed(evt);
             }
         });
+        angka1Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                angka1FieldKeyTyped(evt);
+            }
+        });
 
         angka2Field.setText("Masukkan Angka Kedua");
+        angka2Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                angka2FieldKeyTyped(evt);
+            }
+        });
 
         tambahButton.setText("Tambah");
         tambahButton.addActionListener(new java.awt.event.ActionListener() {
@@ -166,6 +176,14 @@ System.exit(0);
     private void angka1FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_angka1FieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_angka1FieldActionPerformed
+
+    private void angka2FieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_angka2FieldKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_angka2FieldKeyTyped
+
+    private void angka1FieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_angka1FieldKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_angka1FieldKeyTyped
 
     /**
      * @param args the command line arguments
